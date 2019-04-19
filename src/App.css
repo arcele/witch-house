@@ -39,7 +39,7 @@
 .App .loader img.loadingLogo {
   position:absolute;
   top: 200px;
-  left:calc(50% - 100px);
+  left:calc(50% - 110px);
   width:220px;
   height:220px;
 }
@@ -127,11 +127,20 @@
   position:relative;
   margin:15px 10px 5px 10px;
   text-align:left;
+  opacity: 1;
 }
 
+.App.loading .content {
+  opacity: 0
+}
 
 .App.loading .main {
   opacity:0;
+}
+
+.App .main {
+  opacity: 1;
+  transition: opacity 5s;
 }
 
 .App .main .lights {
