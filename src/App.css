@@ -75,6 +75,25 @@
   background: black;
   margin:10px 15px;
   border-radius:4px;
+  transition: all .75s;
+}
+
+
+.App .nav-header .hamburger.open .nom:nth-child(1) {
+  -ms-transform: rotate(45deg) translate(10px, 10px);/* IE 9 */
+  -webkit-transform: rotate(45deg) translate(10px, 10px); /* Safari */
+  transform: rotate(45deg) translate(15px, 10px);
+  transition:all 1.5s;
+}
+.App .nav-header .hamburger.open .nom:nth-child(2) {
+  opacity:0;
+  transition: opacity .5s;
+}
+.App .nav-header .hamburger.open .nom:nth-child(3) {
+  -ms-transform: rotate(-45deg) translate(15px, -5px); /* IE 9 */
+  -webkit-transform: rotate(-45deg) translate(15px, -5px); /* Safari */
+  transform: rotate(-45deg) translate(15px, -5px);
+  transition: all 1.5s;
 }
 
 .App .nav-tray {
@@ -123,7 +142,7 @@
 .App .main .lights.on {
   background: #2222cc;
   color:white;
-  font-size:14pt;
+  font-size:13pt;
   margin-top:80px;
 }
 .App .main .lights.off {

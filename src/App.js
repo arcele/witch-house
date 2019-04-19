@@ -27,12 +27,12 @@ class App extends Component {
   render() {
     let appClass = this.state.loading ? 'App loading' :'App';
     let navTrayClass = this.state.displayNav ? 'nav-tray' : 'nav-tray hide'
-    console.log('navTrayClass:', navTrayClass)
+    let hamburgerClass = this.state.displayNav ? 'hamburger open' : 'hamburger'
     return (
       <div className={appClass} onClick={this.activateLasers.bind(this)}>
         <header className="App-header">
           <div class="nav-header">
-            <div class="hamburger" onClick={this.slideNav.bind(this)}>
+            <div class={hamburgerClass} onClick={this.slideNav.bind(this)}>
               <div class="nom"></div>
               <div class="nom"></div>
               <div class="nom"></div>
