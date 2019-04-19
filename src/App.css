@@ -3,11 +3,9 @@
   min-height: 100vh;
   max-width:375px;
   background: radial-gradient(circle farthest-side, #ffffff 65%, #cccccc);
-
 }
 
 .App-header {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +22,8 @@
 .App img.logo {
   position:absolute;
   z-index:5;
+  opacity:0;
 }
-
 
 .App:not(.loading) img.logo {
   top:0;
@@ -33,7 +31,10 @@
   height:70px;
   padding-top:3px;
   width:75px;
-  transition:transparency 2.5s;
+  opacity:1;
+  transition:opacity 5s;
+  -webkit-transition: opacity 5s;
+  -moz-transition: opacity 5s;
 }
 
 .App .loader img.loadingLogo {
@@ -47,21 +48,22 @@
 .App.loading .nav-header {
   opacity:0;
 }
+
 .App .nav-header {
   opacity:1;
   background:white;
   width:100%;
   float:left;
   height:75px;
-  transition: opacity .75s;
   position:fixed;
   top:0;
   left:0;
   z-index:1;
   border-bottom: 1px solid #704214;
-
+  transition: opacity .75s;
+  -webkit-transition: opacity .75s;
+  -moz-transition: opacity .75s;
 }
-
 
 .App .nav-header .hamburger {
   position:absolute;
@@ -69,6 +71,7 @@
   width:75px;
   height:65px;
 }
+
 .App .nav-header .hamburger .nom {
   width:45px;
   height:4px;
@@ -76,6 +79,8 @@
   margin:10px 15px;
   border-radius:4px;
   transition: all .75s;
+  -webkit-transition: all .75s;
+  -moz-transition: all .75s;
 }
 
 
@@ -84,16 +89,22 @@
   -webkit-transform: rotate(45deg) translate(10px, 10px); /* Safari */
   transform: rotate(45deg) translate(15px, 10px);
   transition:all 1.5s;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
 }
 .App .nav-header .hamburger.open .nom:nth-child(2) {
   opacity:0;
   transition: opacity .5s;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
 }
 .App .nav-header .hamburger.open .nom:nth-child(3) {
   -ms-transform: rotate(-45deg) translate(15px, -5px); /* IE 9 */
   -webkit-transform: rotate(-45deg) translate(15px, -5px); /* Safari */
   transform: rotate(-45deg) translate(15px, -5px);
   transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
 }
 
 .App .nav-tray {
@@ -104,15 +115,19 @@
   background:black;
   color:white;
   transition:left .25s;
+  -webkit-transition: left .25s;
+  -moz-transition: left .25s;
   height:100%;
   z-index:20;
   -webkit-box-shadow: 10px -5px 6px -6px #777;
-    -moz-box-shadow: 10px -5px 6px -6px #777;
-         box-shadow: 10px -5px 6px -6px #777;
+  -moz-box-shadow: 10px -5px 6px -6px #777;
+  box-shadow: 10px -5px 6px -6px #777;
 }
 .nav-tray.hide {
   left:-215px;
-  transition:left .5s
+  transition:left .5s;
+  -webkit-transition: left .5s;
+  -moz-transition: left .5s;
 }
 .App .nav-tray li {
   list-style-type: none;
@@ -141,6 +156,8 @@
 .App .main {
   opacity: 1;
   transition: opacity 5s;
+  -webkit-transition: opacity 5s;
+  -moz-transition: opacity 5s;
 }
 
 .App .main .lights {
@@ -154,10 +171,10 @@
   font-size:13pt;
   margin-top:80px;
 }
+
 .App .main .lights.off {
   background:#cecece;
   color:black;
-
 }
 
 
@@ -277,5 +294,7 @@
 .App:not(.loading) .loader {
   opacity:0;
   height:0px;
-  transition: all 2.5s
+  transition: all 2.5s;
+  -webkit-transition: all 2.5s;
+  -moz-transition: all 2.5s;
 }
