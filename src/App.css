@@ -1,17 +1,19 @@
 .App {
   text-align: center;
+  min-height: 100vh;
   max-width:375px;
+  background: radial-gradient(circle farthest-side, #ffffff 65%, #cccccc);
+
 }
 
 .App-header {
-  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background: radial-gradient(circle farthest-side, #ffffff 65%, #cccccc);
   position:relative;
 }
 
@@ -24,15 +26,18 @@
   z-index:5;
 }
 
+
 .App:not(.loading) img.logo {
   top:0;
-  left:75px;
-  height:75px;
+  left:70px;
+  height:70px;
+  padding-top:3px;
   width:75px;
-  transition:all .9s;
+  transition:transparency 2.5s;
 }
 
-.App.loading img.logo {
+.App .loader img.loadingLogo {
+  position:absolute;
   top: 200px;
   left:calc(50% - 100px);
   width:220px;
@@ -49,11 +54,15 @@
   float:left;
   height:75px;
   transition: opacity .75s;
-  position:absolute;
+  position:fixed;
   top:0;
   left:0;
   z-index:1;
+  border-bottom: 1px solid #704214;
+
 }
+
+
 .App .nav-header .hamburger {
   position:absolute;
   margin-top:10px;
@@ -69,7 +78,7 @@
 }
 
 .App .nav-tray {
-  position:absolute;
+  position:fixed;
   top:75px;
   left:0;
   width:195px;
@@ -77,17 +86,55 @@
   color:white;
   transition:left .25s;
   height:100%;
+  z-index:20;
+  -webkit-box-shadow: 10px -5px 6px -6px #777;
+    -moz-box-shadow: 10px -5px 6px -6px #777;
+         box-shadow: 10px -5px 6px -6px #777;
 }
 .nav-tray.hide {
-  left:-195px;
+  left:-215px;
   transition:left .5s
 }
 .App .nav-tray li {
   list-style-type: none;
   text-align:left;
+  font-size:16pt;
+  padding: 7px 20px;
+  border-bottom:1px solid #704214;
+  cursor:pointer;
+}
+
+.App .content {
+  position:relative;
+  margin:15px 10px 5px 10px;
+  text-align:left;
+}
+
+
+.App.loading .main {
+  opacity:0;
+}
+
+.App .main .lights {
+  margin-top:80px;
+  width:100%;
+}
+
+.App .main .lights.on {
+  background: #2222cc;
+  color:white;
   font-size:14pt;
-  padding: 3px 20px;
-  border-bottom:1px solid #ddd;
+  margin-top:80px;
+}
+.App .main .lights.off {
+  background:#cecece;
+  color:black;
+
+}
+
+
+.App .main .lights .text {
+  padding: 8px 9px;
 }
 
 .circular-loader {
@@ -195,6 +242,12 @@
   max-width: 375px;
   z-index:10;
 }
-.App:not(.loading) .loader {
+.App:not(.loading) .circular-loader {
   display:none;
+}
+
+.App:not(.loading) .loader {
+  opacity:0;
+  height:0px;
+  transition: all 2.5s
 }
